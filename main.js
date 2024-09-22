@@ -1,8 +1,9 @@
 let randNum = (min=0, max=1) => {
-  if(min == 0 && max == 1){
-    return Math.random()
+  if(typeof(min) == 'string' || typeof(max) == 'string'){
+    console.error('Error: `min` and `max` has to be Numbers')
+    return 0
   }
-  else if(min < max){
+  if(min < max){
     return Math.random()*(max-min)+min
   }
   else{
